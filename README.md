@@ -21,6 +21,8 @@ ___
 
 ## Solution
 ```sql
+-- 1. High-Value Customers Report : "Find the top 10 customers who have spent the most. Include their customer ID, total purchase amount, and total number of purchases."
+
 SELECT TOP 10 
 	customer_id,
 	SUM(purchase_amount_usd) AS [total purchase amount],

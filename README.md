@@ -28,6 +28,24 @@ df = pd.read_csv("shopping_trends.csv")
 df.head(10)
 ```
 
+```py
+#Cleaning header by converting it to lowercase and replace " " to "_" and the parenthesis
+df.columns = df.columns.str.lower()
+df.columns = df.columns.str.replace(" ", "_").str.replace(" ", "_").str.replace("(","").str.replace(")","")
+df.head(5)
+```
+
+```py
+#Data Cheaning
+#Checking the uniqness of the data
+df["customer_id"].unique()
+
+# Notes : All columns were checked one by one to lessen the unnecessary data.
+```
+
+## The data is cleaned, and there is no need to edit.
+
+## Importing and Querying
 
 # MSSQL Server
 ## I ask ChatGPT to generate business questions about the data.

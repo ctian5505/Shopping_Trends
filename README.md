@@ -18,7 +18,18 @@ My Steps
 7. Create the query (Query requested by Chat GPT)
 
 ```
+# Python Cleaning
+```py
+#Reading the data
+import pandas as pd
+df = pd.read_csv("shopping_trends.csv")
 
+#Display just 10 rows
+df.head(10)
+```
+
+
+# MSSQL Server
 ## I ask ChatGPT to generate business questions about the data.
 1. High-Value Customers Report : "Find the top 10 customers who have spent the most. Include their customer ID, total purchase amount, and total number of purchases."
 

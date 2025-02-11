@@ -19,7 +19,7 @@
 8. Product Color Popularity : "Rank the top 5 most frequently purchased colors."
 ___
 
-##Solution
+## Solution
 ```sql
 SELECT TOP 10 
 	customer_id,
@@ -34,4 +34,3 @@ ORDER BY
 
 ```
 
-'''

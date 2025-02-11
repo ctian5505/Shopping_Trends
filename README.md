@@ -13,9 +13,9 @@ My Steps
 2. Clean the csv using python(jupyter notebook)
 3. Create a SQL database
 4. Create a table
-5. Upload to clean file to MSSQL
+5. Upload the clean file to MSSQL
 6. Append the impoted data into the table
-7. Create the query (Querry requested by Chat GPT)
+7. Create the query (Query requested by Chat GPT)
 
 ```
 

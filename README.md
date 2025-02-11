@@ -25,14 +25,13 @@ ___
 
 SELECT TOP 10 
 	customer_id,
-	SUM(purchase_amount_usd) AS [total purchase amount],
-	COUNT(customer_id) AS [total number purchase]
+	SUM(purchase_amount_usd) AS [total_purchase_amount],
+	COUNT(customer_id) AS [total_number_purchase]
 FROM
 	sales_trend
 GROUP BY
 	customer_id
 ORDER BY
-	 [total purchase amount] DESC
-
+	 [total_purchase_amount] DESC
 ```
 

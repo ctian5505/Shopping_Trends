@@ -18,3 +18,20 @@
 
 8. Product Color Popularity : "Rank the top 5 most frequently purchased colors."
 ___
+
+##Solution
+```sql
+SELECT TOP 10 
+	customer_id,
+	SUM(purchase_amount_usd) AS [total purchase amount],
+	COUNT(customer_id) AS [total number purchase]
+FROM
+	sales_trend
+GROUP BY
+	customer_id
+ORDER BY
+	 [total purchase amount] DESC
+
+```
+
+'''

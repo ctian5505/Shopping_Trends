@@ -188,5 +188,4 @@ FROM
 	CTE
 WHERE 
 	rank_of_frequently_purchased_colors <= 5
-*/
 ```

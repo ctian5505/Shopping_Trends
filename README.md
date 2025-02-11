@@ -54,3 +54,33 @@ GROUP BY
         ELSE 'null'
     END
 ```
+
+```sql
+--3. Most Popular Product Categories by Gender : "Show the top 3 most purchased product categories for each gender."
+
+```
+
+```sql
+-4. Discount Impact Analysis : "Find out if discounts drive higher spending. Compare the average purchase amount of customers who used a discount vs. those who didn’t."
+
+
+```
+
+```sql
+--5. Seasonal Purchase Trends : "Show the total revenue generated per season to identify the most profitable shopping period."
+
+```
+
+```sql
+6. Payment Method Preferences : "Identify the most frequently used payment method for purchases and compare it with customers' preferred payment methods."
+
+```
+
+```sql
+--7. Shipping Type vs. Purchase Amount : "Analyze whether customers who choose express shipping tend to spend more compared to those using standard shipping."
+
+```
+
+```sql
+--8. Product Color Popularity : "Rank the top 5 most frequently purchased colors."
+```

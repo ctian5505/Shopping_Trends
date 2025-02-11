@@ -61,9 +61,7 @@ GROUP BY
 ```
 
 ```sql
--4. Discount Impact Analysis : "Find out if discounts drive higher spending. Compare the average purchase amount of customers who used a discount vs. those who didn’t."
-
-
+--4. Discount Impact Analysis : "Find out if discounts drive higher spending. Compare the average purchase amount of customers who used a discount vs. those who didn’t."
 ```
 
 ```sql
@@ -72,8 +70,7 @@ GROUP BY
 ```
 
 ```sql
-6. Payment Method Preferences : "Identify the most frequently used payment method for purchases and compare it with customers' preferred payment methods."
-
+--6. Payment Method Preferences : "Identify the most frequently used payment method for purchases and compare it with customers' preferred payment methods."
 ```
 
 ```sql

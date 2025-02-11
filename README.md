@@ -35,3 +35,22 @@ ORDER BY
 	 [total_purchase_amount] DESC
 ```
 
+```sql
+-- 2. Subscription vs. Non-Subscription Spending : "Compare the average purchase amount of subscribed vs. non-subscribed customers."
+
+SELECT 
+    CASE 
+        WHEN subscription_status = 'Yes' THEN 'Subscribed'
+        WHEN subscription_status = 'No' THEN 'Non-Subscribed'
+        ELSE 'null'
+    END AS subscribed_status,  
+    AVG(purchase_amount_usd) AS average_purchase_amount
+FROM 
+	sales_trend
+GROUP BY 
+	CASE 
+        WHEN subscription_status = 'Yes' THEN 'Subscribed'
+        WHEN subscription_status = 'No' THEN 'Non-Subscribed'
+        ELSE 'null'
+    END
+```

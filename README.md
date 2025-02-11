@@ -2,7 +2,7 @@
 ![Shopping Trends Logo](https://github.com/ctian5505/Shopping_Trends/blob/main/Online-Shopping-Trends-What-Do-Recent-Reports-Suggest-About-Online-Shopper-Behavior-Globally-3.jpg)
 
 ## I ask ChatGPT to generate business questions about the data.
-###1. High-Value Customers Report
+1. High-Value Customers Report
 "Find the top 10 customers who have spent the most. Include their customer ID, total purchase amount, and total number of purchases."
 
 2. Subscription vs. Non-Subscription Spending

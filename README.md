@@ -5,9 +5,19 @@
 [Datasets](https://www.kaggle.com/datasets/sresthajain/shopping-trends-dataset)
 
 # Objectives
-## Clean the data and create report using MSSQL
-## My Steps:
-### 
+### Clean the data and create report using MSSQL
+
+```
+My Steps
+1. Downlaod the data (csv file)
+2. Clean the csv using python(jupyter notebook)
+3. Create a SQL database
+4. Create a table
+5. Upload to clean file to MSSQL
+6. Append the impoted data into the table
+7. Create the query (Querry requested by Chat GPT)
+
+```
 
 ## I ask ChatGPT to generate business questions about the data.
 1. High-Value Customers Report : "Find the top 10 customers who have spent the most. Include their customer ID, total purchase amount, and total number of purchases."

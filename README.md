@@ -1,6 +1,13 @@
 # Shopping Trends
 ![Shopping Trends Logo](https://github.com/ctian5505/Shopping_Trends/blob/main/Online-Shopping-Trends-What-Do-Recent-Reports-Suggest-About-Online-Shopper-Behavior-Globally-3.jpg)
 
+[Data from kaggle]([https://www.google.com](https://www.kaggle.com/datasets/sresthajain/shopping-trends-dataset))
+
+# Objectives
+## Clean the data and create report using MSSQL
+## My Steps:
+### 
+
 ## I ask ChatGPT to generate business questions about the data.
 1. High-Value Customers Report : "Find the top 10 customers who have spent the most. Include their customer ID, total purchase amount, and total number of purchases."
 

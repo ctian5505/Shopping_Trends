@@ -58,26 +58,135 @@ GROUP BY
 ```sql
 --3. Most Popular Product Categories by Gender : "Show the top 3 most purchased product categories for each gender."
 
+WITH CTE as (
+	SELECT
+		gender,
+		category,
+		count(category) AS [purchased_count],
+		RANK() OVER(PARTITION BY gender ORDER BY count(category) DESC) AS [Rank]
+	FROM
+		sales_trend
+	GROUP BY
+		gender,
+		category
+)
+SELECT 
+	* 
+FROM 
+	CTE
+WHERE
+	Rank <= 3
+
 ```
 
 ```sql
 --4. Discount Impact Analysis : "Find out if discounts drive higher spending. Compare the average purchase amount of customers who used a discount vs. those who didn’t."
+
+SELECT 
+	CASE
+		WHEN discount_applied = 'Yes' THEN 'With Discount'
+		WHEN discount_applied = 'No' THEN 'No Discount'
+		ELSE 'null'
+	END AS [discount_status],
+	AVG(purchase_amount_usd) AS [average purchase]
+FROM
+	sales_trend
+GROUP BY
+	CASE
+		WHEN discount_applied = 'Yes' THEN 'With Discount'
+		WHEN discount_applied = 'No' THEN 'No Discount'
+		ELSE 'null'
+	END
+
 ```
 
 ```sql
 --5. Seasonal Purchase Trends : "Show the total revenue generated per season to identify the most profitable shopping period."
 
+SELECT
+	season,
+	SUM(purchase_amount_usd) AS [revenue]
+FROM
+	sales_trend
+GROUP BY
+	season
+ORDER BY
+	SUM(purchase_amount_usd)
+
 ```
 
 ```sql
 --6. Payment Method Preferences : "Identify the most frequently used payment method for purchases and compare it with customers' preferred payment methods."
+
+WITH CTE_1 AS (
+	SELECT
+		payment_method AS [mode_of_payment],
+		COUNT(payment_method) AS [payment_method_count],
+		RANK() OVER (ORDER BY COUNT(payment_method) DESC) AS [payment_method_rank]
+	FROM 
+		sales_trend
+	GROUP BY
+		payment_method
+),
+CTE_2 AS (
+	SELECT
+	preferred_payment_method AS [preferred_payment_method],
+	COUNT(preferred_payment_method) AS [preferred_payment_method_count],
+	RANK() OVER (ORDER BY COUNT(preferred_payment_method) DESC) AS [preferred_payment_method_rank]
+FROM 
+	sales_trend
+GROUP BY
+	preferred_payment_method
+
+)
+
+SELECT 
+	CTE_1.mode_of_payment,
+	CTE_1.payment_method_count,
+	CTE_1.payment_method_rank,
+	CTE_2.preferred_payment_method_count,
+	CTE_2.preferred_payment_method_rank
+FROM
+	CTE_1
+LEFT JOIN
+	CTE_2
+ON
+	CTE_1.mode_of_payment = CTE_2.preferred_payment_method
 ```
 
 ```sql
 --7. Shipping Type vs. Purchase Amount : "Analyze whether customers who choose express shipping tend to spend more compared to those using standard shipping."
 
+SELECT
+	shipping_type,
+	AVG(purchase_amount_usd) AS [average_spending]
+FROM
+	sales_trend
+GROUP BY
+	shipping_type
+ORDER BY
+	AVG(purchase_amount_usd) DESC
+
 ```
 
 ```sql
 --8. Product Color Popularity : "Rank the top 5 most frequently purchased colors."
+
+WITH CTE AS (
+	SELECT
+		color,
+		COUNT(color) AS [color_count],
+		RANK() OVER(ORDER BY COUNT(color) DESC) AS [rank_of_frequently_purchased_colors]
+	FROM
+		sales_trend
+	GROUP BY
+		color
+		)
+SELECT
+	*
+FROM
+	CTE
+WHERE 
+	rank_of_frequently_purchased_colors <= 5
+*/
 ```
